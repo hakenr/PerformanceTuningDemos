@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StringConcatenation
 {
-	public static class Program
+	public static class StringConcatenationProgram
 	{
 		public static void Main(string[] args)
 		{

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchCollection", "SearchC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{F55FE902-C567-4C32-9895-706BB1B5464D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCaching", "WebCaching\WebCaching.csproj", "{A650D27E-34E9-4139-A842-5D9F2882C072}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F55FE902-C567-4C32-9895-706BB1B5464D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55FE902-C567-4C32-9895-706BB1B5464D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55FE902-C567-4C32-9895-706BB1B5464D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A650D27E-34E9-4139-A842-5D9F2882C072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A650D27E-34E9-4139-A842-5D9F2882C072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A650D27E-34E9-4139-A842-5D9F2882C072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A650D27E-34E9-4139-A842-5D9F2882C072}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

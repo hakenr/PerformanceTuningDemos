@@ -38,7 +38,7 @@ namespace SearchCollection
 
 			#endregion
 
-			// Contains = sekvenční vyhledávání = O(n), též LINQ-to-objects: .Where() !!!
+			// Contains = sekvenční vyhledávání = O(n), též hledání LINQ-to-XY: .Where(), First(), Count(), ... !!!
 			sw.Start();
 			int found = hledane.Count(t => list.Contains(t));
 			sw.Stop();

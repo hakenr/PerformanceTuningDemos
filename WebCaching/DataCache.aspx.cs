@@ -26,33 +26,33 @@ namespace WebCaching
 
 		private static string GetData()
 		{
-			//return FetchDataFromDb();  // no caching
+			return FetchDataFromDb();  // no caching
 
-			const string cacheKey = "MyData";
+			//const string cacheKey = "MyData";
 
-			string result = (string)HttpRuntime.Cache[cacheKey];
-			if (result == null)
-			{
-				lock (dataLock)
-				{
-					result = (string)HttpRuntime.Cache[cacheKey];
-					if (result == null)
-					{
-						result = FetchDataFromDb();
+			//string result = (string)HttpRuntime.Cache[cacheKey];
+			//if (result == null)
+			//{
+			//	lock (dataLock)
+			//	{
+			//		result = (string)HttpRuntime.Cache[cacheKey];
+			//		if (result == null)
+			//		{
+			//			result = FetchDataFromDb();
 
-						//HttpRuntime.Cache[cacheKey] = result;	  // alternativa
-						HttpRuntime.Cache.Add(
-							key: cacheKey,
-							value: result,
-							dependencies: null,
-							absoluteExpiration: DateTime.Now.AddSeconds(5),
-							slidingExpiration: System.Web.Caching.Cache.NoSlidingExpiration,  // nebo TimeSpan
-							priority: System.Web.Caching.CacheItemPriority.Normal,
-							onRemoveCallback: null);
-					}
-				}
-			}
-			return result;
+			//			//HttpRuntime.Cache[cacheKey] = result;	  // alternativa
+			//			HttpRuntime.Cache.Add(
+			//				key: cacheKey,
+			//				value: result,
+			//				dependencies: null,
+			//				absoluteExpiration: DateTime.Now.AddSeconds(5),
+			//				slidingExpiration: System.Web.Caching.Cache.NoSlidingExpiration,  // nebo TimeSpan
+			//				priority: System.Web.Caching.CacheItemPriority.Normal,
+			//				onRemoveCallback: null);
+			//		}
+			//	}
+			//}
+			//return result;
 		}
 		private static object dataLock = new object();
 	}

@@ -38,7 +38,7 @@ namespace SearchCollection
 
 			#endregion
 
-			// Contains = sekvenční vyhledávání = O(n)
+			// Contains = sekvenční vyhledávání = O(n), též LINQ-to-objects: .Where() !!!
 			sw.Start();
 			int found = hledane.Count(t => list.Contains(t));
 			sw.Stop();
@@ -50,13 +50,13 @@ namespace SearchCollection
 			sw.Stop();
 			Console.WriteLine($"\tArray.BinarySearch<>():     Nalezeno {found:n0}x, čas {sw.ElapsedTicks,10:n0} ticks");
 
-			// Dictionary = Hashtable, O(1)
+			// Dictionary = Hashtable, O(1), též HashSet
 			sw.Restart();
 			found = hledane.Count(t => dictionary.ContainsKey(t));
 			sw.Stop();
 			Console.WriteLine($"\tDictionary<>.ContainsKey(): Nalezeno {found:n0}x, čas {sw.ElapsedTicks,10:n0} ticks");
 
-			// Dictionary = Hashtable, O(1)
+			// ToLookup = Hashtable, O(1)
 			sw.Restart();
 			found = hledane.Count(i => lookup.Contains(i));
 			sw.Stop();

@@ -12,7 +12,8 @@ namespace SearchCollection
 		{
 			Search(collectionSize: 100, searchItemsCount: 50);
 			Search(collectionSize: 1000, searchItemsCount: 5000);
-			Search(collectionSize: 10000, searchItemsCount: 50000);
+			Search(collectionSize: 10000, searchItemsCount: 100000);
+			Search(collectionSize: 100000, searchItemsCount: 15000);
 		}
 
 		private static void Search(int collectionSize, int searchItemsCount)

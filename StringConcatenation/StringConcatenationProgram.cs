@@ -13,6 +13,9 @@ namespace StringConcatenation
 		{
 			const int iterations = 100000;
 
+			Console.WriteLine("Press ENTER key to start...");
+			Console.ReadLine();
+
 			string str;
 
 			// string concatenation
@@ -38,6 +41,8 @@ namespace StringConcatenation
 			str = sb.ToString();
 			sw2.Stop();
 			Console.WriteLine($"StringBuilder:   {sw2.ElapsedTicks, 15:n0} ticks");
+			Console.WriteLine("Press ENTER key to end...");
+			Console.ReadLine();
 		}
 	}
 }

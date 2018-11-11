@@ -11,15 +11,22 @@ namespace StringConcatenation
 	{
 		public static void Main(string[] args)
 		{
-			const int iterations = 100000;
+			const int iterations = 300000;
 
-			Console.WriteLine("Press ENTER key to start...");
-			Console.ReadLine();
+			//Console.WriteLine("Press ENTER key to start...");
+			//Console.ReadLine();
 
-			string str;
+			RunStringConcatenation(iterations);
 
-			// string concatenation
-			str = string.Empty;
+			RunStringBuilder(iterations);
+
+			//Console.WriteLine("Press ENTER key to end...");
+			//Console.ReadLine();
+		}
+
+		private static string RunStringConcatenation(int iterations)
+		{
+			var str = string.Empty;
 			Stopwatch sw1 = new Stopwatch();
 			sw1.Start();
 			for (int i = 0; i < iterations; i++)
@@ -27,10 +34,13 @@ namespace StringConcatenation
 				str = str + (char)(i % 26 + 65);
 			}
 			sw1.Stop();
-			Console.WriteLine($"string + string: {sw1.ElapsedTicks, 15:n0} ticks");
+			Console.WriteLine($"string + string: {sw1.ElapsedTicks,15:n0} ticks");
+			return str;
+		}
 
-			// StringBuilder
-			str = string.Empty;
+		private static string RunStringBuilder(int iterations)
+		{
+			var str = string.Empty;
 			var sw2 = new Stopwatch();
 			sw2.Start();
 			var sb = new StringBuilder();
@@ -40,9 +50,8 @@ namespace StringConcatenation
 			}
 			str = sb.ToString();
 			sw2.Stop();
-			Console.WriteLine($"StringBuilder:   {sw2.ElapsedTicks, 15:n0} ticks");
-			Console.WriteLine("Press ENTER key to end...");
-			Console.ReadLine();
+			Console.WriteLine($"StringBuilder:   {sw2.ElapsedTicks,15:n0} ticks");
+			return str;
 		}
 	}
 }
